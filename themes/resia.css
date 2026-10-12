@@ -1,0 +1,211 @@
+/*
+ * Resia — bb palette.
+ * Dark: neutral charcoal surfaces, near-white text, one rust accent.
+ *   Colors are sampled from the reference screenshot.
+ * Light: the Resia Portal cream "ash" ramp (resia-portal src/index.css)
+ *   with the same rust accent.
+ * Values marked "derived" are mixes or alpha steps of sampled colors.
+ */
+
+:root,
+.light {
+  color-scheme: light;
+  --canvas: #fffbf2;
+  --ink: #24141a;
+  --background: var(--canvas);
+  --foreground: var(--ink);
+  --card: #f7f0e3;
+  --card-foreground: var(--ink);
+  --popover: #fffbf2;
+  --popover-foreground: var(--ink);
+  --primary: #87401e;
+  --primary-foreground: #fdf5f1;
+  --secondary: #f7f0e3;
+  --secondary-foreground: var(--ink);
+  --accent: #f7e6cb;
+  --accent-foreground: #87401e;
+  --muted: #e9ddcb;
+  --muted-foreground: #4e3b39;
+  --subtle-foreground: #6b5750;
+  /* derived: 50% mix of muted and subtle text */
+  --readback-foreground: color-mix(in oklab, #4e3b39 50%, #6b5750);
+  --timeline-accent: #1e4149;
+  --file-accent: var(--timeline-accent);
+  /* derived: ink at a low alpha, so hover shows on canvas and on cards */
+  --state-hover: color-mix(in oklab, var(--ink) 6%, transparent);
+  --state-active: #e9ddcb;
+  --destructive: #9e2320;
+  --destructive-foreground: #fffbf2;
+  --destructive-text: #9e2320;
+  --attention: #c08a08;
+  --warning: #c08a08;
+  --warning-text: #a25e10;
+  --success: #2e6b4a;
+  --diff-added: #2e6b4a;
+  --diff-removed: #9e2320;
+  --pr-merged: #9c3a63;
+  --border: #e9ddcb;
+  --border-hairline: #e9ddcb;
+  --border-seam: #e9ddcb;
+  --border-seam-vertical: var(--border-seam);
+  --input: #d2c2ac;
+  --ring: #87401e;
+  --surface-recessed: #e9ddcb;
+  --surface-recessed-solid: #e9ddcb;
+  --surface-raised: #f7f0e3;
+  /* derived: canvas at 92% */
+  --surface-scrim: rgba(255, 251, 242, 0.92);
+  --surface-destructive: #f2ded8;
+  /* derived: error at 25% */
+  --surface-destructive-border: rgba(158, 35, 32, 0.25);
+  --surface-selected: #f7e6cb;
+  --surface-selected-border: rgba(135, 64, 30, 0.4);
+  --font-sans: "Archivo", "Inter Variable", Inter, system-ui, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+  /* 8px base gives sm 4, md 6, lg 8, xl 12 */
+  --radius: 8px;
+  --shadow-color: rgba(44, 14, 19, 0.18);
+  --shadow-2xs: 0px 1px 0px 0px rgba(44, 14, 19, 0.08);
+  --shadow-xs: 0px 1px 0px 0px rgba(44, 14, 19, 0.08);
+  --shadow-sm: 0px 1px 2px 0px rgba(44, 14, 19, 0.12);
+  --shadow: 0px 1px 3px 0px rgba(44, 14, 19, 0.14);
+  --shadow-md: 0px 4px 10px -2px rgba(44, 14, 19, 0.16);
+  --shadow-lift: 0px -4px 12px -4px rgba(44, 14, 19, 0.1);
+  --shadow-lg: 0px 8px 20px -4px rgba(44, 14, 19, 0.18);
+  --shadow-xl: 0px 12px 28px -6px rgba(44, 14, 19, 0.18);
+  --shadow-2xl: 0px 18px 40px -8px rgba(44, 14, 19, 0.22);
+}
+
+.dark {
+  color-scheme: dark;
+  /* Page and editor are the darkest layer. */
+  --canvas: #181818;
+  --ink: #ebebeb;
+  --background: var(--canvas);
+  --foreground: var(--ink);
+  /* Cards are one step above the page. Popups and buttons use the next step. */
+  --card: #232223;
+  --card-foreground: var(--ink);
+  --popover: #2a292a;
+  --popover-foreground: var(--ink);
+  /* Rust fill, as in the user message bubble. */
+  --primary: #87401e;
+  --primary-foreground: #fdf5f1;
+  --secondary: #2a292a;
+  --secondary-foreground: var(--ink);
+  /* Menu and list highlight, as in the selected side bar row. */
+  --accent: #353432;
+  --accent-foreground: var(--ink);
+  --muted: #2a292a;
+  /* derived: a lighter step of the sampled grays, so the hierarchy stays */
+  --muted-foreground: #b8b8b8;
+  --subtle-foreground: #a0a0a0;
+  /* derived: 50% mix of muted and subtle text */
+  --readback-foreground: color-mix(in oklab, #b8b8b8 50%, #a0a0a0);
+  /* Orange link color. */
+  --timeline-accent: #ef9966;
+  --file-accent: var(--timeline-accent);
+  /* derived: ink at a low alpha, so hover shows on every surface */
+  --state-hover: color-mix(in oklab, var(--ink) 6%, transparent);
+  --state-active: #353432;
+  /* derived: sampled red #de4740 mixed 80% with ink, for 4.5:1 text */
+  --destructive: #e16862;
+  --destructive-foreground: #181818;
+  --destructive-text: #e16862;
+  --attention: #e0b345;
+  --warning: #e0b345;
+  --warning-text: #e0b345;
+  /* derived: sampled green #368f5e mixed 80% with ink, for 4.5:1 text */
+  --success: #5aa17a;
+  --diff-added: #5aa17a;
+  --diff-removed: #e16862;
+  /* derived: sampled purple #9269c4 mixed 80% with ink, for 4.5:1 text */
+  --pr-merged: #a483cc;
+  --border: #363636;
+  --border-hairline: #363636;
+  --border-seam: #2b2b2b;
+  --border-seam-vertical: var(--border-seam);
+  --input: #494847;
+  /* The rust fill is too dark for a focus ring, so the ring uses the link color. */
+  --ring: #ef9966;
+  --surface-recessed: #151515;
+  --surface-recessed-solid: #151515;
+  --surface-raised: #232223;
+  /* derived: page color at 92% */
+  --surface-scrim: rgba(24, 24, 24, 0.92);
+  /* derived: red at 15% and 45% */
+  --surface-destructive: rgba(222, 71, 64, 0.15);
+  --surface-destructive-border: rgba(222, 71, 64, 0.45);
+  --surface-selected: #353432;
+  --surface-selected-border: #494847;
+  /* Side bar and secondary panel: neutral gray, a clear step lighter than the page. */
+  --sidebar: #2b2b2b;
+  --sidebar-foreground: var(--ink);
+  /* Selected and highlighted side bar row. */
+  --sidebar-accent: #363636;
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: #444444;
+  --sidebar-ring: #ef9966;
+  --font-sans: "Archivo", "Inter Variable", Inter, system-ui, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+  --radius: 8px;
+  --shadow-color: rgba(0, 0, 0, 0.45);
+  --shadow-2xs: 0px 1px 0px 0px rgba(0, 0, 0, 0.3);
+  --shadow-xs: 0px 1px 0px 0px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.4);
+  --shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0px 4px 10px -2px rgba(0, 0, 0, 0.45);
+  --shadow-lift: 0px -4px 12px -4px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0px 8px 20px -4px rgba(0, 0, 0, 0.45);
+  --shadow-xl: 0px 12px 28px -6px rgba(0, 0, 0, 0.45);
+  --shadow-2xl: 0px 18px 40px -8px rgba(0, 0, 0, 0.55);
+}
+
+/*
+ * Sent message bubble. bb draws it with --surface-recessed, which 27 other
+ * components share, so this rule targets the bubble only.
+ * The selector depends on bb's markup (ConversationMessageContent.tsx).
+ * A bb update can break it. Then the bubble falls back to the token color.
+ */
+[data-message-column] > .ml-auto > .items-end > .rounded-xl.bg-surface-recessed {
+  background-color: #87401e;
+  border-color: #87401e;
+}
+
+[data-message-column] > .ml-auto > .items-end > .rounded-xl.bg-surface-recessed,
+[data-message-column] > .ml-auto > .items-end > .rounded-xl.bg-surface-recessed * {
+  color: #fdf5f1;
+}
+
+/*
+ * Selected thread row in the side bar: same rust as the sent message bubble.
+ * bb draws this row with --state-active, which other components share, so this
+ * rule targets the row class only. background-image: none removes the sticky
+ * row's translucent overlay. Text and icons turn cream, because the normal dim
+ * grays are too low in contrast on rust.
+ */
+.bb-sidebar-selected-row {
+  background-color: #87401e;
+  background-image: none;
+  color: #fdf5f1;
+}
+
+.bb-sidebar-selected-row * {
+  color: #fdf5f1;
+}
+
+/*
+ * Mention chips inside the sent message bubble: a darker brown than the bubble.
+ * bb draws a chip with --surface-raised at 50%. On rust, that gives a pale
+ * pink, and the cream text has low contrast. Cream on #5a2813 is about 11:1.
+ */
+[data-message-column] > .ml-auto > .items-end > .rounded-xl.bg-surface-recessed .prompt-mention-pill {
+  background-color: #5a2813;
+  border-color: #6e3a20;
+}
+
+[data-message-column] > .ml-auto > .items-end > .rounded-xl.bg-surface-recessed .prompt-mention-pill:hover {
+  background-color: #4a210f;
+}

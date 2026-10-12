@@ -1,0 +1,36 @@
+{
+  "name": "bb-plugin-theme-resia",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "The Resia palette for bb: cream light mode, charcoal dark mode, and a rust accent.",
+  "engines": {
+    "bb": ">=0.44",
+    "bbPluginSdk": ">=0.6.3"
+  },
+  "bb": {
+    "name": "Resia Theme",
+    "description": "The Resia palette for bb: cream light mode, charcoal dark mode, and a rust accent.",
+    "branding": {
+      "icon": "Palette"
+    },
+    "server": "./server.ts",
+    "skills": [],
+    "themes": [
+      {
+        "id": "resia",
+        "name": "Resia",
+        "description": "Cream light mode, charcoal dark mode, and a rust accent",
+        "css": "./themes/resia.css",
+        "codeTheme": {
+          "dark": "./themes/resia-code-dark.json"
+        }
+      }
+    ]
+  },
+  "keywords": [
+    "bb-plugin"
+  ],
+  "devDependencies": {
+    "@get-bb/plugin-sdk": "0.6.3"
+  }
+}
